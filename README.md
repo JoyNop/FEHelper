@@ -1,4 +1,4 @@
-![vue](vue\vueimg\logo.jpg)
+![vue](vue/vueimg/logo.jpg)
 
 自从Vue2.0发布后，Vue就成了前端领域的热门话题，github也突破了三万的star，那么对于新手来说，如何高效快速的学习Vue2.0呢。
 
