@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript练习</title>
+<link href="css/style.css" rel="stylesheet">
+<script>
+    var oEB=document.documentElement||document.body;
+    var thistime=null;
+    function getClass(aParent,sClass)
+    {
+        var obj=aParent.getElementsByTagName('*');
+        var arr=[]
+        for (var i=0;i<obj.length;i++)
+        {
+            if(obj[i].className==sClass)
+            {
+                arr.push(obj[i]);
+            }
+        }
+        return arr;
+    }
+    function toDou(n)
+    {
+        if(n<9)
+        {
+            return '0'+n;
+        }
+        else
+        {
+            return ''+n;
+        }
+    }
+    function StartTime()
+    {
+        var oPr=document.getElementsByTagName('pre')[0];
+        var welcome=oPr.getElementsByTagName('span')[0];
+        var today=new Date();
+        var h=toDou(today.getHours());
+        var m=toDou(today.getMinutes());
+        var s=toDou(today.getSeconds());
+        welcome.onclick=function () 
+        {
+            alert('当前时间是'+h+':'+m+':'+s)
+        }
+        welcome.innerHTML=say();
+        function say ()
+        {
+            if(h>=12&&h<=17)
+            {
+                return '下午好😁，'
+            }
+            else if(h>=18&&h<24)
+            {
+                return '晚上好😇，'
+            }
+            else if(h>=0&&h<=5)
+            {
+                return '凌晨好😳，'
+            }
+            else if(h>=6&&h<=11)
+            {
+                return '上午好🙃，'
+            }
+        }
+    }
+    function shaDow(obj,dis)
+    {
+        for(var j=0;j<obj.length;j++)
+        {
+            obj[j].style.display=dis;
+            if(obj[j].className=='title')
+            {
+                obj[j].style.display='block';
+            }
+        }
+    }
+    window.onload=function()
+    {
+        //问候----------------------------------------------
+        setInterval(StartTime,1000);
+        StartTime;
+        //在新窗口打开---------------------------------------
+        var oLi=document.getElementsByTagName('li');
+        for(var i=0;i<oLi.length;i++)
+        {
+            if(oLi[i].className!='title')
+            {
+                var aLink=oLi[i].getElementsByTagName('a')[0];
+                aLink.target='_blank';
+            }
+        }
+        //名字效果-------------------------------------------
+        var oShowBg=document.getElementById('showbg');
+        var myPhoto=document.getElementById('wx_pic');
+        oShowBg.onclick=function ()
+        {
+            this.removeAttribute('style');
+            setTimeout(function ()
+            {
+                myPhoto.removeAttribute('style');
+            },500)
+        }
+        getClass(oEB,'footer')[0].children[0].onclick=function ()
+        {
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+            var oldTop=myPhoto.offsetTop;
+            oShowBg.setAttribute('style','display:block;height:'+oEB.offsetHeight+'px');
+            myPhoto.setAttribute('style','display:block;bottom:'+(-scrollTop+200)+'px');
+        }
+    }
+    function fnScroll(obj,iTarget)
+    {
+        var speed=0;
+        clearInterval(time1);
+        time1=setInterval(function ()
+        {
+            speed=(iTarget-obj.offsetTop)/10;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+            if(obj.offsetTop==iTarget)
+            {
+                clearInterval(time1);
+            }
+            else
+            {
+                obj.style.top=obj.offsetTop+speed+'px';
+            }
+        },30)
+    }
+</script>
+</head>
+<body>
+    <div id="showbg"></div>
+    <pre>
+        <h1><a href="index.html">JavaScript练习</a></h1>
+        <span class="welcome"></span>为效果统一，大部分js演示都通过鼠标事件触发。如果你也是js的初学者，欢迎加群一起学习。
+    </pre>
+    <ul id="list" class="home">
+            <li class="title">初探JavaScript</li>
+            <li><a href="javascript/js001/js001.html">1、事件、函数、变量、判断</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="javascript/js001/js002.html">2、函数传参</a><span>最后更新：2018-08-23</span></li>
+            <li><a href="javascript/js001/js003.html">3、提取行间事件</a><span>最后更新：2018-08-25</span></li>
+            <li><a href="javascript/js001/js004.html">4、循环</a><span>最后更新：2018-08-26</span></li>
+            <li><a href="javascript/js001/js005.html">5、this、索引值</a><span>最后更新：2018-08-28</span></li>
+            <li><a href="javascript/js001/js006.html">6、innerHTML、字符串拼接、数组</a><span>最后更新：2018-08-29</span></li>
+            <li><a href="javascript/js001/js007.html">7、综合练习-简易小日历</a><span>最后更新：2018-08-30</span></li>
+            <li class="title">基础JAVAscript</li>
+            <li><a href="javascript/js002/js001.html">1、JJavaScript组成、变量的类型、数据类型转换</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js002/js002.html">2、作用域、闭包、父函数、子函数、命名规范</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js002/js003.html">3、运算符</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js002/js004.html">4、程序流程控制、获取select选中值</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js002/js005.html">5、Json、for in</a><span>最后更新：2018-09-01</span></li>
+            <li class="title">深入JAVAscript</li>
+            <li><a href="javascript/js003/js001.html">1、函数返回值、arguments、取非行间样式</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js003/js002.html">2、数组添加、删除、连接、分割、排序</a><span>最后更新：2018-09-01</span></li>
+            <li class="title">定时器</li>
+            <li><a href="javascript/js004/js001.html">1、定时器、日期对象</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="javascript/js004/js002.html">2、延时提示框、无缝滚动</a><span>最后更新：2018-09-01</span></li>
+            <li class="title">DOM</li>
+            <li><a href="javascript/js005/js001.html">1、DOM基础、子节点、父节点
+            </a><span>最后更新：2016-11-09</span></li>
+            <li><a href="javascript/js005/js002.html">2、首尾子节点、兄弟节点
+            </a><span>最后更新：2016-11-14</span></li>
+            <li><a href="javascript/js005/js003.html">3、DOM方式操作元素属性、DOM元素灵活查找
+            </a><span>最后更新：2016-11-15</span></li>
+            <li><a href="javascript/js005/js004.html">4、创建、插入和删除元素
+            </a><span>最后更新：2016-11-20</span></li>
+            <li><a href="javascript/js005/js005.html">5、文档碎片
+            </a><span>最后更新：2016-11-20</span></li>
+            <li><a href="javascript/js005/js006.html">6、表格应用、提取、添加、删除
+            </a><span>最后更新：2016-11-22</span></li>
+            <li><a href="javascript/js005/js007.html">7、表格应用、搜索
+            </a><span>最后更新：2018-08-30</span></li>
+            <li><a href="javascript/js005/js008.html">8、li、表格移动、排序
+            </a><span>最后更新：2016-11-27</span></li>
+            <li><a href="javascript/js005/js009.html">9、dom综合运用
+            </a><span>最后更新：2016-11-28</span></li>
+        <!--
+            <li><a href="javascript/js005/js010.html">10、表单应用
+            </a><span>最后更新：2016-12-01</span></li>
+        -->
+            <li class="title">BOM</li>
+            <li><a href="javascript/js006/js001.html">1、打开、关闭窗口、当前浏览器信息、当前网址
+            </a><span>最后更新：2016-12-06</span></li>
+            <li><a href="javascript/js006/js002.html">2、可视区尺寸、滚动距离
+            </a><span>最后更新：2016-12-07</span></li>
+            <li><a href="javascript/js006/js003.html">3、系统对话框
+            </a><span>最后更新：2016-12-10</span></li>
+            <li class="title">运动</li>
+            <li><a href="javascript/js007/js001.html">1、匀速运动、运动框架及应用
+            </a><span>最后更新：2016-12-04</span></li>
+            <li><a href="javascript/js007/js002.html">2、缓冲运动
+            </a><span>最后更新：2016-12-11</span></li>
+        </ul>
+        <ul id="zuoye" class="home">
+            <li class="title">日常练习</li>
+            <li><a href="practice/javascript/js001.html">1、选项卡、数组、获取select选中值</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js002.html">2、表格 隔行变色／移入变色、选项卡、数组、获取select选中值</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js003.html">3、延时提示框、匀速运动、无缝滚动</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js004.html">4、DOM操作、函数返回值、获取非行间样式</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js005.html">5、日期对象、时钟</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js006.html">6、DOM综合练习、数组排序、选项卡封装</a><span>最后更新：2018-09-01</span></li>
+            <li><a href="practice/javascript/js007.html">7、匀速运动、缓冲运动</a><span>最后更新：2018-09-01</span></li>
+        <!--<li><a href="practice/javascript/js008.html">2016-01-13</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js009.html">2016-01-16</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js010.html">2016-01-17</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js011.html">2016-01-18</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js012.html">2016-01-19</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js013.html">2016-01-22</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js014.html">2016-01-23</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js015.html">2016-01-24</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js016.html">2016-01-25</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js017.html">2016-01-30</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js018.html">2016-02-07</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js019.html">2016-02-09</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js020.html">2016-02-21</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js021.html">2016-06-10</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js022.html">2016-06-21</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js023.html">2016-06-21</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js024.html">2016-06-22</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js025.html">2016-06-24</a><span>最后更新：2018-08-30</span></li>
+            <li><a href="practice/javascript/js026.html">2016-06-26</a><span>最后更新：2018-08-30</span></li>
+        -->
+        </ul>
+        <p class="footer">Powered by <a href="javascript:;">RUEI</a></p>
+        <a href="javascript:popUp('http://www.baidu.com/');">Example</a>
+</body>
+</html>
