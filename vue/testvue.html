@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <title>Vue联系</title>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-
+<style>
+    .bg{
+        background-color: yellow;
+    }
+</style>
 </head>
 <body>
     <div id="box"></div>
@@ -15,10 +19,29 @@
         var str = '<h2>hello Ruei!</h2>'
         var vm = new Vue({
             el: '#box',
-            template: str
+            render(createrElement){//和原生创建的元素有区别的
+            return createrElement(//首先调用一个函数
+            "ul",
+            {
+                class:{bg:true},//给UL添加dom属性和绑定事件等,就是v-bind:class="{bg:true}"
+                style:{fontSize:"50px"},
+                attrs:{
+                    abc:"RUei"
+                },
+                domProps:{
+                    innerHTML:"<li>我是html</li>"//这个权重高，写了这个下面创建的li就都无效了
+                }
+            },
+            [
+                        createrElement("li",1),//再次调用createrElement(),设置内容数据是1
+                        createrElement("li",2),
+                        createrElement("li",3)
+                    ]
+                );
+            }
         });
     },false);
 </script>
-
+ 
  
 </html>
