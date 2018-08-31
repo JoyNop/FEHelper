@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Vue联系</title>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-<style>
-    .bg{
-        background-color: yellow;
-    }
-</style>
+    <meta charset="utf-8">
+    <title>Vue联系</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        .bg {
+            background-color: #ccffe4;
+        }
+    </style>
 </head>
+
 <body>
     <div id="box"></div>
+    <div id="router1">
+        <h1>hello Ruei!</h1>
+        <p>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <rouer-link to="/foo">Go to Foo</rouer-link>
+            <rouer-link to="/Bar">Go to Bar</rouer-link>
+        </p>
+
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
 </body>
 
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded',function () {
+    document.addEventListener('DOMContentLoaded', function () {
         var str = '<h2>hello Ruei!</h2>'
         var vm = new Vue({
             el: '#box',
-            render(createrElement){//和原生创建的元素有区别的
-            return createrElement(//首先调用一个函数
-            "ul",
-            {
-                class:{bg:true},//给UL添加dom属性和绑定事件等,就是v-bind:class="{bg:true}"
-                style:{fontSize:"50px"},
-                attrs:{
-                    abc:"RUei"
-                },
-                domProps:{
-                    innerHTML:"<li>我是html</li>"//这个权重高，写了这个下面创建的li就都无效了
-                }
-            },
-            [
-                        createrElement("li",1),//再次调用createrElement(),设置内容数据是1
-                        createrElement("li",2),
-                        createrElement("li",3)
+            render(createrElement) {//和原生创建的元素有区别的
+                return createrElement(//首先调用一个函数
+                    "ul",
+                    {
+                        class: { bg: true },//给UL添加dom属性和绑定事件等,就是v-bind:class="{bg:true}"
+                        style: { fontSize: "50px" },
+                        attrs: {
+                            abc: "RUei"
+                        },
+                        domProps: {
+                            innerHTML: "<li>我是im</li>"//这个权重高，写了这个下面创建的li就都无效了
+                        }
+                    },
+                    [
+                        createrElement("li", 1),//再次调用createrElement(),设置内容数据是1
+                        createrElement("li", 2),
+                        createrElement("li", 3)
                     ]
                 );
             }
         });
-    },false);
+    }, false);
 </script>
- 
- 
+<script>
+    //0.如果使用模块化机制编程，导入vue和是vuerouter需要调用Vue.use(VueRouter)
+    //1.定义（路由）组件。
+    //可以从其他文件import进来
+    const Foo = { template: '<div>foo</div>' }
+    const Bar = { template: '<div>Bar</div>' }
+    //2.定义路由
+    //每个路由应该映射一个组件。其中“Component”可以是通过Vue.extend()创建的组件构造器或者是一个组件配置对象
+    const routes = [
+        { path: '/foo', component: Foo },
+        { path: '/Bar', component: Bar }
+    ]
+    //3.创建router实例，然后传`routes`配置
+    // 你还可以传别的配置参数, 不过先这么简单着吧。
+    const router = new VueRouter({
+        routes//缩写 相当于 routes：routes
+    })
+    //4.要记得挂在根实例。
+    //记得要通过router配置参数注入路由，
+    //从而记得让整个应用都具有路由功能
+    const app = new Vue({
+        router
+    }).$mount('#router1')
+    //now run start!
+</script>
+
 </html>
