@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Vue联系</title>
+    <title>Vue练习</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -22,8 +22,8 @@
             <!-- 使用 router-link 组件来导航. -->
             <!-- 通过传入 `to` 属性指定链接. -->
             <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-            <rouer-link to="/foo">Go to Foo</rouer-link>
-            <rouer-link to="/Bar">Go to Bar</rouer-link>
+            <router-link to="/foo">Go to Foo</router-link>
+            <router-link to="/bar">Go to Bar</router-link>
         </p>
 
         <!-- 路由出口 -->
@@ -32,7 +32,7 @@
     </div>
 </body>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
         var str = '<h2>hello Ruei!</h2>'
         var vm = new Vue({
@@ -59,7 +59,7 @@
             }
         });
     }, false);
-</script>
+</script> -->
 <script>
     //0.如果使用模块化机制编程，导入vue和是vuerouter需要调用Vue.use(VueRouter)
     //1.定义（路由）组件。
@@ -70,7 +70,7 @@
     //每个路由应该映射一个组件。其中“Component”可以是通过Vue.extend()创建的组件构造器或者是一个组件配置对象
     const routes = [
         { path: '/foo', component: Foo },
-        { path: '/Bar', component: Bar }
+        { path: '/bar', component: Bar }
     ]
     //3.创建router实例，然后传`routes`配置
     // 你还可以传别的配置参数, 不过先这么简单着吧。
