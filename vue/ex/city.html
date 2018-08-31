@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <!-- import CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-   <!-- import Vue before Element -->
-   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-   <!-- import JavaScript -->
-   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 </head>
+
 <body>
-    <div><div class="block">
-            <span class="demonstration">默认 click 触发子菜单</span>
-            <el-cascader
-              :options="options"
-              v-model="selectedOptions"
-              @change="handleChange">
-            </el-cascader>
-          </div>
-          <div class="block">
-            <span class="demonstration">hover 触发子菜单</span>
-            <el-cascader
-              expand-trigger="hover"
-              :options="options"
-              v-model="selectedOptions2"
-              @change="handleChange">
-            </el-cascader>
-          </div>
+
+    <div>所在地区：</div>
+    <div id="xxxx">
+        <select v-model="select" id="xx">
+            <option v-for="option in options" v-bind:value="option.value" id="x">{{option.text}}</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
     </div>
 </body>
+
+<script>
+    var sss=new Vue({
+        el: 'xxxx',
+        data: {
+            selected: 'A',
+            options: [
+
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' }
+
+            ]
+        }
+    })
+</script>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 </html>
