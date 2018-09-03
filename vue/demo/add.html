@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue练习-增加</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="addexp">
+	<button v-on:click="counter +=1">Add 1</button>
+	<p>The Button above has chicked {{counter}} times.</p>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+var example=new Vue(
+{
+	el:'#addexp',
+	data:{
+			counter:0
+	}
+})
+</script>
+
+</html>
