@@ -2,41 +2,42 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>event hander</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<meta charset="utf-8">
+	<title>event hander</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
-    <div id="eventhander">
-	<button v-on:click="greet">greet</button>
-	 
+	<div id="eventhander">
+		<button v-on:click="greet">greet</button>
+
 	</div>
 
 </body>
 
 <script type="text/javascript">
-var example=new Vue(
-{
-	el:'#greet',
-	data:{
-			name:'Vue.js'
-	},
-	//在`methods`对象中定义方法
-	mehods:{
-	greet:function(event){
-		alert('hello'+this.name+'!')
-		//`event`是原生DOM事件
-		if(event){
-		alert(event.target.tagName)
-		}
-		
-	}
-	
-	}
-})
+	var example = new Vue(
+		{
+			el: '#eventhander',
+			data: {
+				name: 'Vue.js'
+			},
+			//在`methods`对象中定义方法
+			mehods: {
+				greet: function (event) {
+					alert('hello' + this.name + '!')
+					//`event`是原生DOM事件
+					if (event) {
+						alert(event.target.tagName)
+					}
+
+				}
+
+			}// 也可以用 JavaScript 直接调用方法
+		})
+		eventhander.greet()// => 'Hello Vue.js!'
 </script>
 
 </html>
