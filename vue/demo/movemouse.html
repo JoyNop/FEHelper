@@ -2,51 +2,50 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Vue练习-鼠标属性</title>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <title>Vue练习-鼠标属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <style>
-        #canvas{
+        #canvas {
             width: 600px;
             height: 600px;
             border-color: black;
             border: 10px;
             border-style: solid;
         }
-
     </style>
 </head>
 
 <body>
-	<div id="canvas" v-on:mousemove="mousexy">{{x}},{{y}} <span v-on:mousemove="stopmove">stopmove</span>
-		 <br>
-		<p> {{x}},{{y}} <span v-on:mousemove.stop>stopmove2</span></p>
-	</div>
+    <div id="canvas" v-on:mousemove="mousexy">{{x}},{{y}} <span v-on:mousemove="stopmove">stopmove</span>
+        <br>
+        <p> {{x}},{{y}} <span v-on:mousemove.stop>stopmove2</span></p>
+    </div>
 
 </body>
 
 <script type="text/javascript">
-	new Vue({
-		el:'#canvas',
-        data:{
-            x:0,
-            y:0
+    new Vue({
+        el: '#canvas',
+        data: {
+            x: 0,
+            y: 0
         },
-        methods:{
-            mousexy:function(event){
+        methods: {
+            mousexy: function (event) {
                 console.log(event);
-                this.x=event.offsetX;
-                this.y=event.offsetY;
+                this.x = event.offsetX;
+                this.y = event.offsetY;
             },
-            stopmove:function(event){
+            stopmove: function (event) {
                 event.stopPropagation();
 
             }
         }
-        
-	})
+
+    })
 
 
 </script>

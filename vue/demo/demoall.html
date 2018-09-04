@@ -2,49 +2,49 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Vue练习</title>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <title>Vue练习</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
-	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
-<h3>从本页面开始所有的demo引用js全部归于app-demo.js，注意查看引用</h3>
-<div id="keyevents">
-    <h4>数据双向绑定/input/select/textarea</h4>
-    <h1>键盘events</h1>
-    <label>姓名</label>
-    <input ref="_Name" type="text" v-on:keyup.enter="logName">
-    <label>年龄</label>
-    <input ref="_Age" type="text" v-on:keyup.alt.enter="logAge">
-    <label>民族</label>
-    <input type="text" v-model="mz">
-    <p>你的姓名{{Name}},你的年龄{{Age}}</p>
-    <p>民族{{mz}}</p>
-</div>
+    <h3>从本页面开始所有的demo引用js全部归于app-demo.js，注意查看引用</h3>
+    <div id="keyevents">
+        <h4>数据双向绑定/input/select/textarea</h4>
+        <h1>键盘events</h1>
+        <label>姓名</label>
+        <input ref="_Name" type="text" v-on:keyup.enter="logName">
+        <label>年龄</label>
+        <input ref="_Age" type="text" v-on:keyup.alt.enter="logAge">
+        <label>民族</label>
+        <input type="text" v-model="mz">
+        <p>你的姓名{{Name}},你的年龄{{Age}}</p>
+        <p>民族{{mz}}</p>
+    </div>
 </body>
 <script src="app-demo.js"></script>
 <script>
-new Vue ({
-    el:'#keyevents',
-    data:{
-        Name:"",
-        Age:"",
-        mz:""
+    new Vue({
+        el: '#keyevents',
+        data: {
+            Name: "",
+            Age: "",
+            mz: ""
 
-    },
-    methods:{
-        logName:function(){
-            console.log("你正在输入名字");
-            this.Name=this.$refs._Name.value;
         },
-        logAge:function(){
-            console.log("你正在输入年龄")
-            this.Age=this.$refs._Age.value;
+        methods: {
+            logName: function () {
+                console.log("你正在输入名字");
+                this.Name = this.$refs._Name.value;
+            },
+            logAge: function () {
+                console.log("你正在输入年龄")
+                this.Age = this.$refs._Age.value;
+            }
         }
-    }
-})
+    })
 </script>
 
 

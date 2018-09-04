@@ -2,29 +2,42 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>Vue练习-增加</title>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <title>Vue练习-Computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
-	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 
 <body>
-	<div id="addexp">
-		<button v-on:click="counter +=1">Add 1</button>
-		<p>The Button above has chicked {{counter}} times.</p>
-	</div>
-
+    <div id="computed">多用于优化，书写与methods:function相同</div>
+    <br>
+    <button v-on:click="a++">Add to A</button>
+    <button v-on:click="b++">Add to B</button>
+    <p>A-{{a}}</p>
+    <p>B-{{b}}</p>
+    <p>Age+A={{addToA()}}</p>
+    <p>Age+B={{addToB()}}</p>
 </body>
 
 <script type="text/javascript">
-	var example = new Vue(
-		{
-			el: '#addexp',
-			data: {
-				counter: 0
-			}
-		})
+    var example = new Vue(
+        {
+            el: '#computed',
+            data: {
+                a: 0,
+                b: 0,
+                age: 0
+            },
+            methods: {
+                addToA: function () {
+                    return this.a + this.age;
+                },
+                addToB: function () {
+                    return this.b + this.age;
+                }
+            }
+        })
 </script>
 
 </html>
