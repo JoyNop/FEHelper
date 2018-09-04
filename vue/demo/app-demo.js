@@ -2,7 +2,8 @@ new Vue ({
     el:'#keyevents',
     data:{
         Name:"",
-        Age:""
+        Age:"",
+        mz:""
 
     },
     methods:{
