@@ -6,13 +6,19 @@
 	<title>Vue练习-css</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
-	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <link rel="stylesheet" href="css/demo-activecss.css">
 </head>
 
 <body>
 	<div id="temp">
         
     <!-- demo页面 -->
+    <h1>动态css class</h1>
+    <h2>示例1</h2>
+    <h2 v-bind:class="{red:true}">示例2</h2>
+
+    <div v-on:class="{changeColor:changeColor}"><span>Ruei</span></div>
 	</div>
 
 </body>
