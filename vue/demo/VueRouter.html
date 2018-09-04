@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue练习*VueRouter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+        <div class="app">
+            <div>
+                <router-link to="/home">主页</router-link>
+                <router-link to="/news">新闻</router-link>
+            </div>
+            <div><router-view></router-view></div>
+        </div>
+        <template id="news">
+            <div>
+                <h2>我是新闻页面</h2>
+                <ul>
+                    <li>
+                        <router-link to="/news/detail/001?a=1">详细新闻</router-link>
+                        <router-link to="/news/detail/002">详细新闻2</router-link>
+                        <router-link to="/news/detail/003">详细新闻3</router-link>
+                    </li>
+                    <div><router-view></router-view></div>
+                </ul>
+            </div>
+        </template>
+    </body>
+    <script>
+        //组件
+        var Home={
+            template:`<h2>我是主页</h2>`
+    
+        };
+        var News={
+            template:`#news`
+    
+        };
+        var Detail={
+            template:`<p>{{$route.params}}=>{{$route.query}}=>{{$route.path}}</p>`
+        }
+        //路由配置
+        const routes=[
+            {
+                path:'/home',
+                component:Home
+            },
+            {
+                path:'/news',
+                component:News,
+                children:[
+                    {
+                        path:'detail/:id',
+                        component:Detail
+                    }
+                ]
+            },
+            {
+                path:'*',
+                redirect:'/home'
+            }
+        ]
+        //生成路由实例
+        const router=new VueRouter({
+            routes
+        });
+        //挂在到vue实例上
+        const vm=new Vue({
+            el:'.app',
+            router
+        });
+    </script>
+</html>
