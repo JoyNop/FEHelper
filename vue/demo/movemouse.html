@@ -20,9 +20,9 @@
 </head>
 
 <body>
-	<div id="canvas" v-on:mousemove="mousexy">{{x}},{{y}}
+	<div id="canvas" v-on:mousemove="mousexy">{{x}},{{y}} <span v-on:mousemove="stopmove">stopmove</span>
 		 <br>
-		<p> {{x}},{{y}}</p>
+		<p> {{x}},{{y}} <span v-on:mousemove.stop>stopmove2</span></p>
 	</div>
 
 </body>
@@ -39,6 +39,10 @@
                 console.log(event);
                 this.x=event.offsetX;
                 this.y=event.offsetY;
+            },
+            stopmove:function(event){
+                event.stopPropagation();
+
             }
         }
         
