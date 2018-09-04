@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Vue练习</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+<h3>从本页面开始所有的demo引用js全部归于app-demo.js，注意查看引用</h3>
+<div id="keyevents">
+    <h4>数据双向绑定</h4>
+    <h1>键盘events</h1>
+    <label>姓名</label>
+    <input ref="_Name" type="text" v-on:keyup.enter="logName">
+    <label>年龄</label>
+    <input ref="_Age" type="text" v-on:keyup.alt.enter="logAge">
+ 
+    <p>你的姓名{{Name}},你的年龄{{Age}}</p>
+</div>
+</body>
+<script src="app-demo.js"></script>
+
+
+</html>
