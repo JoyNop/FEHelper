@@ -15,7 +15,7 @@
         
     <!-- demo页面 -->
     <h1>动态css class</h1>
-    <h2>示例1</h2>
+    <h2 v-on="aa()">示例1</h2>
     <h2 v-bind:class="{red:true}">示例2</h2>
 
     <div v-on:class="{changeColor:changeColor}"><span>Ruei</span></div>
@@ -28,7 +28,12 @@
 		{
 			el: '#temp',
 			data: {
-			}
+            },
+            methods:{
+                aa:function(){
+                    console.log("a");
+                }
+            }
 		})
 </script>
 
