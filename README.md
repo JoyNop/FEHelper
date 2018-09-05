@@ -75,4 +75,5 @@ vuex主要是用来对不同组件间进行通信，它构建了一个Vue实例�
 | [Vue2.0小白入门教程](https://ke.qq.com/course/279700)                        | 2018-9-4  | 11/49 |
 | Finished [3.md](vue/3.md)                                                    | 2018-9-4  | 100%  |
 | 路由Demo [VueRouter](vue/demo/VueRouter.html)                                | 2018-9-4  | 100%  |
+| 路由Demo [VueJs调试工具——vue-devtools](vue/vue-devtools.md)                | 2018-9-5  | 100%  |
 
