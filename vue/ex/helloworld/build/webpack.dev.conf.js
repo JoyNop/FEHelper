@@ -13,6 +13,15 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
+/* Ruei 增加express 20180905 */
+const express = require('express')
+const app=express()
+var appData=require('../goods.json')
+var goods=appData.goods
+var apiRoutes=express.Router()
+app.use('/api',apiRoutes)
+/* 增加express end */
+
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -42,7 +51,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    }, /* Ruei 增加express 20180905 */
+    before(app){
+      app.get('/api/goods',(req,res)=>{
+        res.json({
+          code:0,
+          data:goods
+        })
+      })
+    }  /* Ruei 增加路由规则 end */
   },
   plugins: [
     new webpack.DefinePlugin({
