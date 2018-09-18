@@ -11,10 +11,10 @@
 <body>
     <div id="vue-app">
         <!--图片-->
-        <div id="bag"></div>
+        <div id="bag" v-bind:class="{brust:ended}"></div>
         <!--进度情况-->
         <div id="bag-health">
-            <div v-bind:style="{widht: health+'%'}"></div>
+            <div v-bind:style="{width: health + '%'}"></div>
         </div>
         <!--控制按钮-->
         <div id="controls">
@@ -22,8 +22,8 @@
             <button v-on:click="restart">恢复刷新</button>
         </div>
     </div>
-</body>
 
+</body>
 <script src="app.js"></script>
 
 </html>
