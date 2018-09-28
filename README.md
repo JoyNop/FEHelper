@@ -59,6 +59,9 @@ vuex主要是用来对不同组件间进行通信，它构建了一个Vue实例�
 
 [“Vue2.0”跟俺一起全面入坑 03](vue/3.md " “Vue2.0”跟俺一起全面入坑 03")
 
+[vuejs心法和技法](vue/summaryvue10-20kills " vuejs心法和技法")
+ 
+
 
 
  
