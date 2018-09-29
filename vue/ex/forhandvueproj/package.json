@@ -1,0 +1,15 @@
+{
+  "name": "webpacklist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack",
+    "dev": "webpack-dev-server --inline --hot --port 8088"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}
