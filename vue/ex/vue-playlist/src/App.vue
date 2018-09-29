@@ -4,6 +4,7 @@
     <app-Header></app-Header>
     <user></user>
     <app-Footer></app-Footer>
+    <app-ueditor ></app-ueditor>
   </div>
 </template>
 
@@ -12,18 +13,23 @@
   import Header from './components/Header'
   import User from './components/User'
   import Footer from './components/Footer'
+  import ueditor from './components/ueditor'
+
+
 
   export default {
     name: 'App',
     data() {
       return {
-        title: "this is my first vue=cli"
+        title: "this is my first vue cli"
       }
     },
     components: {
       "user": User,
       "app-Header": Header,
-      "app-Footer": Footer
+      "app-Footer": Footer,
+      "app-ueditor":ueditor
+
     }
   }
 </script>
