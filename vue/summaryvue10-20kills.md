@@ -55,14 +55,89 @@ vm.a//->3
 
 ## directive object context暴露出来公update/bind函数使用
 
+
 > `el:` the element the directive is bound to
+
 > `vm: `the context ViewModel that owns this directive.
-> `expression` the expression of the binding ,excluding arguments and filtres.
+
+> `expression` the expression of the binding ,excluding 
+arguments and filtres.
+
 > `arg` the argument ,if present
+
 > `name` the name of the diective ,with the prefix.
+
 > `modifiers` an object containing modifiers ,if any
-> `description` an object that contains the parsing result of the entire directive
+
+> `description` an object that contains the parsing result 
+of the entire directive
+
 > `params` an object containing param attributes.
 
 
+
+比如下面的directive例子中：
+
+
+```html
+
+<div id="demo v-demo:arghello.modifiera.modifierb="expmsg":parax="xdata"></div>
+<!--注意需要watch directive的parameter才能实现xdata变化就能触发directive内部的变化-->
+
+Vue.directive('example',
+    {
+        params:['parax'],
+        paramWatchers:{
+            parax:function(val,oldVal){
+                console.log('parax changed')
+            }
+        }
+    }
+)
+
 ```
+
+绑定css class和style
+
+```html
+
+<div v-bind:style"styleObject></div>
+<li v-bind:class="{'j_current':currentttab='login'}">这是class的绑定演示</li>
+data:{
+    styleObject:{
+        color:'red',
+        fontsize:'13px'
+    }
+}
+<div v-bind:class="classObject"></div>
+data: {
+  classObject: {
+    'class-a': true,
+    'class-b': false
+  }
+}
+```
+
+## v-fi directive 条件渲染
+
+注意v-if会直接渲染在DOM中插入对应 的元素
+
+```html
+<h1 v-if="ok">Yes</h1>
+<h1 v-else>No</h1>
+<template v-if="ok">
+  <h1>Title</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+</template>
+
+```
+
+## v-show条件显示
+
+不会删除元素，只会使用display:none css的方式
+
+```html
+<h1 v-show="ok">Hello!</h1>
+```
+
