@@ -14,4 +14,4 @@
 
 >下面代码可以直接复制出去执行
 
-[/demo/ifecycle1.html](/demo/lifecycle1.html)
+[/demo/ifecycle1.html](FEHelper/vue/demo/lifecycle1.html)
