@@ -12,7 +12,6 @@ import {
   transitions
 } from 'vuetify'
 import 'vuetify/src/stylus/app.styl'
-import zhHans from 'vuetify/es5/locale/zh-Hans'
 
 Vue.use(Vuetify, {
   components: {
@@ -27,8 +26,4 @@ Vue.use(Vuetify, {
     transitions
   },
   iconfont: 'md',
-  lang: {
-    locales: { zhHans },
-    current: 'zh-Hans'
-  }
 })

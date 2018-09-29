@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>{{title}}</h1>
+    <app-Header></app-Header>
+    <user></user>
+    <app-Footer></app-Footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+  //局部注册
+  import Header from './components/Header'
+  import User from './components/User'
+  import Footer from './components/Footer'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    data() {
+      return {
+        title: "this is my first vue=cli"
+      }
+    },
+    components: {
+      "user": User,
+      "app-Header": Header,
+      "app-Footer": Footer
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  h1 {
+    color: aquamarine;
+  }
 </style>
