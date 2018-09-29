@@ -80,7 +80,7 @@ vuex主要是用来对不同组件间进行通信，它构建了一个Vue实例�
 | 路由Demo [VueJs调试工具——vue-devtools](vue/vue-devtools.md)                | 2018-9-5  | 100%  |
 | [图片变换demo](https://rennysky.github.io/FEHelper/vue/demo/bag/index.html)  | 2018-9-18 | 100%  |
 | [商品列表demo](vue/ex/vue_cli_demo)                                          | 2018-9-18 | 100%  |
-| [VUE CLI 3.0 DEMO](vue/ex/vue30clidemo/public/favicon.ico)                   | 2018-9-24 | 100%  |
+| [VUE CLI 3.0 DEMO](vue/ex/vue30clidemo/)                   | 2018-9-24 | 100%  |
 | [Vue全局/局部组件嵌套/完整demo(基于VUECLI2.0)](vue/ex/vue-playlist/)         | 2018-9-28 | 100%  |
 | [vuejs心法和技法](vue/summaryvue10-20kills.md)                               | 2018-9-29 | 20%   |
 | [Vue2.0小白入门教程](https://ke.qq.com/course/279700)                        | 2018-9-29 | 55%   |
