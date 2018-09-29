@@ -59,7 +59,7 @@ vuex主要是用来对不同组件间进行通信，它构建了一个Vue实例�
 
 [“Vue2.0”跟俺一起全面入坑 03](vue/3.md " “Vue2.0”跟俺一起全面入坑 03")
 
-[vuejs心法和技法](vue/summaryvue10-20kills " vuejs心法和技法")
+[vuejs心法和技法](vue/summaryvue10-20kills.md " vuejs心法和技法")
  
 
 
@@ -75,9 +75,13 @@ vuex主要是用来对不同组件间进行通信，它构建了一个Vue实例�
 | [《JavaScript DOM脚本编程艺术》](https://book.douban.com/subject/1921890/)   | 2018-8-31 | 100%  |
 | Finished [2.md](vue/2.md)                                                    | 2018-9-3  | 100%  |
 | [JavaScript高级程序设计（第3版）](https://book.douban.com/subject/10546125/) | 2018-9-3  | 2%    |
-| [Vue2.0小白入门教程](https://ke.qq.com/course/279700)                        | 2018-9-4  | 17/49 |
 | Finished [3.md](vue/3.md)                                                    | 2018-9-4  | 100%  |
 | 路由Demo [VueRouter](vue/demo/VueRouter.html)                                | 2018-9-4  | 100%  |
 | 路由Demo [VueJs调试工具——vue-devtools](vue/vue-devtools.md)                | 2018-9-5  | 100%  |
-| [图片变换demo](https://rennysky.github.io/FEHelper/vue/demo/bag/index.html)    | 2018-9-18 | 100%  |
+| [图片变换demo](https://rennysky.github.io/FEHelper/vue/demo/bag/index.html)  | 2018-9-18 | 100%  |
 | [商品列表demo](vue/ex/vue_cli_demo)                                          | 2018-9-18 | 100%  |
+| [Vue全局/局部组件嵌套/完整demo(基于VUECLI2.0)](vue/ex/vue-playlist/)         | 2018-9-28 | 100%  |
+| [vUE CLI 3.0 DEMO](vue/ex/vue30clidemo/public/favicon.ico)                   | 2018-9-28 | 100%  |
+| [vuejs心法和技法](vue/summaryvue10-20kills.md)                               | 2018-9-29 | 20%   |
+| [Vue2.0小白入门教程](https://ke.qq.com/course/279700)                        | 2018-9-29 | 55%   |
+| [Web前端开发之JavaScript精英课堂](https://ke.qq.com/course/231577)           | 2018-9-29 | 7%    |
