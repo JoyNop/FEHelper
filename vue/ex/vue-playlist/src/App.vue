@@ -3,8 +3,9 @@
     <h1>{{title}}</h1>
     <app-Header></app-Header>
     <user></user>
-    <app-Footer></app-Footer>
     <app-ueditor ></app-ueditor>
+    <app-Footer></app-Footer>
+
   </div>
 </template>
 
