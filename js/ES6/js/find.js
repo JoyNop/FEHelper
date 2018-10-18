@@ -1,20 +1,30 @@
 /* 场景1
-假定有一个对象数组A，找到复合条件的对象 */
+j就按每個對象数组每个电脑是否可用
+大于16位操作系统表示客户用，否则不可好用 */
 
-var users = [
-    { name: "jill" },
-    { name: "Alex" },
-    { name: "Bill" }
-];
+var computers = [
+    { name: "apple", ram: 16 },
 
-//es5
-var user;
-for (var i = 0; i < users.length; i++) {
-    if (users[i].name === "Alex") {
-        user = users[i];
-        break;
+    { name: "IBM", ram: 4 },
+
+    { name: "Acer", ram: 32 },
+
+]
+
+var everyComputersCanRunProgram = true;
+var someComputersCanRunProgram = false;
+
+for(var i=0;i<computers.length;i++){
+    var computer=computers[i];
+    if (computer.ram<16){
+        everyComputersCanRunProgram=false;
+
     }
 }
+
+console.log(everyComputersCanRunProgram);
+
+
 //console.log(user);
 
 
