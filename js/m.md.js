@@ -11,7 +11,7 @@
 
 */
 
-var a=123;
+/* var a=123;
 var b=function(){
     a+=1;
     return a;
@@ -26,4 +26,16 @@ function c(){
 console.log(c);
 
 
-console.log(this);
+console.log(this); */
+
+
+function a() {
+    var i = 0;
+    function b() {
+        alert(++i);
+    }
+    return b;
+} var c = a();
+
+debugger
+c();
