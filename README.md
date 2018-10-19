@@ -20,5 +20,4 @@
 | [Vue组件嵌demo&ueditor](vue/ex/vue-playlist/)                                | 2018-9-29 | 100%  |
 |  VueCli3.0 ``vue ui``                               | 2018-10-04 | 100%  |
 | [基于Vue-element-node后台管理系统](https://github.com/rennysky/node-vue-ele-app)                                | 2018-10-15 | 100%  |
-
-| [深入理解javascript原型和闭包](/js/prototype/)                                | 2018-9-29 | 100%  |
+| [深入理解javascript原型和闭包](/js/prototype/)                                | 2018-19 | 2/17  |
