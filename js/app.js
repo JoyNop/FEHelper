@@ -1,17 +1,14 @@
-var a=1+2+3
-console.log(a)
-confirm("234");
+var values = [0, 5, 15, 20];
+debugger
+values.sort(compare);
+alert(values);
 
-console.log("---------");
-
-
-
-function hello() {
-    var a = 10;
-    alert(hello);
+function compare(value1, value2) {
+    if (value1 < value2) {
+        return -1;
+    } else if (value1 > value2) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
-
-console.log(hello);
-
-var message;
-console.log(typeof message);
