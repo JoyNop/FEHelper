@@ -1,8 +1,14 @@
-import React  from 'react';
+import React from 'react';
 
 
-const person= (anything)=>{
-return <p>hello {anything.name},我已经有{anything.count}个作品</p>
+const person = (props) => {
+    return (
+        <div>
+            <p>hello {props.name},我已经有{props.count}个作品</p>
+            <p>{props.children}</p>
+        </div>
+    )
+
 
 }
 
