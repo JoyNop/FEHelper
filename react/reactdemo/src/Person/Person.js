@@ -1,8 +1,8 @@
 import React  from 'react';
 
 
-const person= ()=>{
-return <p>hello joynop,我已经有{Math.round(Math.random()*30)}个作品</p>
+const person= (anything)=>{
+return <p>hello {anything.name},我已经有{anything.count}个作品</p>
 
 }
 
