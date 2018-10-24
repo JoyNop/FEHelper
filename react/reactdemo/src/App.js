@@ -10,17 +10,18 @@ class App extends Component {
       { name: "aaaaa", count: 50 }
 
     ],
-    otherState:"anything"
+    otherState: "anything"
   }
-  switchNameHandler=()=>{
+  switchNameHandler = (newName) => {
     //console.log("hello")
     // DON'T DO this.state.persons[0].name="嘿嘿i";
 
     this.setState({
       persons:
-      [
-        { name: "a嘿嘿嘿aaaa", count: 509999 }
-      ]
+        [
+          { name: "a嘿嘿嘿aaaa", count: 509999 },
+          { name: newName, count: 509999 }
+        ]
     }
     )
   }
@@ -28,10 +29,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1>hello</h1>
-        <button onClick={this.switchNameHandler}>更改状态值</button>
+        {/* <button onClick={()=>this.switchNameHandler("bing")}>更改状态值</button> */}
+        <button onClick={this.switchNameHandler.bind(this, "misss")}>更改状态值</button>
+
         <Person name="joynop" count="10" />
         <Person name="josdfadfynop" count="999  10">thinks</Person>
-        <Person name={this.state.persons[0].name} count ={this.state.persons[0].count}/>
+        <Person name={this.state.persons[0].name} count={this.state.persons[0].count} />
+        <Person name={this.state.persons[1].name} count={this.state.persons[1].count} />
+
         <Person />
 
       </div>
