@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import Person from "./Person/Person";
 class App extends Component {
@@ -33,6 +34,12 @@ class App extends Component {
     
     this.setState({ texts: event.target.value });
     console.log(this.state.texts)
+    console.log("---------");
+  }
+
+  appNode=()=>{
+    var reactAppnode = ReactDOM.findDOMNode(this.App);
+    console.log(reactAppnode)
   }
    
   render() {
@@ -52,7 +59,10 @@ class App extends Component {
 
         <Person />
         <textarea id="mytext"  onChange={this.textChange }></textarea>
-        <p>{this.state.texts}</p>
+        <p>输入的数值为：{this.state.texts}，输入总长度：{this.state.texts.length}</p>
+        <button onClick={() => console.log(234)}> console</button>
+        <button onClick={() => alert(234)}> alert</button>
+        <button onClick={this.appNode}> appNode</button>
 
 
       </div>
