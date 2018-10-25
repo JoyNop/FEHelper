@@ -10,7 +10,8 @@ class App extends Component {
       { name: "aaaaa", count: 50 }
 
     ],
-    otherState: "anything"
+    otherState: "anything",
+    texts:"9999999"
   }
   switchNameHandler = (newName) => {
     //console.log("hello")
@@ -25,8 +26,20 @@ class App extends Component {
     }
     )
   }
+  textChange = (event)=>{
+    // this.setState({
+    //   texts:aaa,
+    // })
+    
+    this.setState({ texts: event.target.value });
+    console.log(this.state.texts)
+  }
+   
   render() {
+    
+
     return (
+
       <div className="App">
         <h1>hello</h1>
         {/* <button onClick={()=>this.switchNameHandler("bing")}>更改状态值</button> */}
@@ -38,6 +51,9 @@ class App extends Component {
         <Person name={this.state.persons[1].name} count={this.state.persons[1].count} />
 
         <Person />
+        <textarea id="mytext"  onChange={this.textChange }></textarea>
+        <p>{this.state.texts}</p>
+
 
       </div>
     );
