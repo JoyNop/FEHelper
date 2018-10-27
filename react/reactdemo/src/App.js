@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
  
 import Person from "./Person/Person";
+import Excel from "./Person/excel";
 
  
 class App extends Component {
@@ -94,11 +95,13 @@ class App extends Component {
             </tr>)
           })}
         
-        </div>
+        </div> <Excel />
       </div>
+     
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'hello') );
   }
+
 }
 
 export default App;
