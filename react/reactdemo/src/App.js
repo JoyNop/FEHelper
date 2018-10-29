@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 
 import Person from "./Person/Person";
- 
+
 
 
 class App extends Component {
@@ -70,7 +70,7 @@ class App extends Component {
 
   render() {
     const greeting = [
- 
+
     ];
 
     return (
@@ -91,9 +91,20 @@ class App extends Component {
         <button onClick={() => console.log(234)}> console</button>
         <button onClick={() => alert(234)}> alert</button>
         <button onClick={this.appNode}> appNode</button>
-        <div style={{fontSize:'2em'}}>hello world</div>
-        <input id="i" value='hello'></input>
+        <div style={{ fontSize: '2em' }}>hello world</div>
+        <input id="i" defaultValue='hello'></input>
         {/* <Excel /> */}
+        <select defaultValue="move">
+          <option value="stay">should i stay</option>
+          <option value="move">or should i go</option>
+          <option value="trouble">if i stay it well be trouble</option>
+        </select>
+        <p>-----------</p>
+        <select defaultValue={["move","stay"]} multiple={true}>
+          <option value="stay">should i stay</option>
+          <option value="move">or should i go</option>
+          <option value="trouble">if i stay it well be trouble</option>
+        </select>
       </div>
 
     );
