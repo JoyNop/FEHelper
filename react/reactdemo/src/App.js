@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './App.css';
 
 import Person from "./Person/Person";
+import Excel from "./Person/Excel";
 
 
 
@@ -21,7 +22,8 @@ class App extends Component {
 
       "aaa", "asdf", "dfas"
 
-    ]
+    ],
+    value:"stay"
   }
   switchNameHandler = (newName) => {
     //console.log("hello")
@@ -66,12 +68,18 @@ class App extends Component {
     console.log(methodName, args);
   }
 
+  getInitialState=()=>{
 
+    return {value:'move'};
+  }
+
+  _onChange=(event)=>{
+    this.setState({value:event.target.value});
+    console.log(this.state.value);
+  }
 
   render() {
-    const greeting = [
-
-    ];
+ 
 
     return (
 
@@ -100,11 +108,26 @@ class App extends Component {
           <option value="trouble">if i stay it well be trouble</option>
         </select>
         <p>-----------</p>
+
+
         <select defaultValue={["move","stay"]} multiple={true}>
           <option value="stay">should i stay</option>
           <option value="move">or should i go</option>
           <option value="trouble">if i stay it well be trouble</option>
         </select>
+
+        <p>-----------</p>
+
+
+        <select defaultValue={this.state.value} onChange={this._onChange}>
+          <option value="stay">should i stay</option>
+          <option value="move">or should i go</option>
+          <option value="trouble">if i stay it well be trouble</option>
+        </select>
+
+        <p>-----------</p>
+
+        <Excel></Excel>
       </div>
 
     );
