@@ -39,6 +39,20 @@ class excel extends React.Component {
             data: data,
         })
     }
+    _toggleSearch = () => {
+        if (this.state.search) {
+            this.setState({
+                data: this._preSearchData,
+                search: false,
+            });
+            this._preSearchData = null;
+        } else {
+            this._preSearchData = this.state.data;
+            this.setState({
+                search: true,
+            });
+        }
+    }
 
     _renderSearch = () => {
         if (!this.state.search) {
@@ -46,7 +60,7 @@ class excel extends React.Component {
         }
         return (
             <tr onChange={this._search}>
-                {this.headers.map((_ignore, idx) => {
+                {(this.headers || []).map((_ignore, idx) => {
                     return <td key={idx}><input type="text" data-idx={idx} /></td>;
                 })}
             </tr>
@@ -64,7 +78,8 @@ class excel extends React.Component {
             ["The Hobbit", "J. R. R. Tolkien", "English", "1937", "100 million"],
             ["She: A History of Adventure", "H. Rider Haggard", "English", "1887", "100 million"],
         ],
-        headers: ["Book", "Author", "Language", "Published", "Sales"]
+        headers: ["Book", "Author", "Language", "Published", "Sales"],
+        search: true,
     }
 
     _renderTable = () => {
@@ -76,17 +91,35 @@ class excel extends React.Component {
                             title += this.state.descending ? '\u2191' : '\u2193';
                         }
                         return <th key={idx}>{title}</th>;
-                    })}
+                    }, this)}
                     </tr></thead>
                 <tbody onDoubleClick={this._showEditor}>
                     {this._renderSearch()}
-                    {this.state.data.map((row, idx) => {
+                    {(this.state.data||[]).map((row, rowidx) => {
+                        return (
+                            <tr key={rowidx}>{
+                                (row||[]).map((cell, idx) => {
+                                    var content = cell;
+                                    var edit = this.state.edit;
+                                    if (edit && edit.row === rowidx && edit.cell === idx) {
+                                        content = (
+                                            <form onSubmit={this._save}>
+                                                <input type="text" defaultValue={cell} />
+                                            </form>
+                                        );
+                                    }
+                                    return <td key={idx} data-row={rowidx}>{content}</td>;
+                                }, this)}
+                            </tr>
+                        )
+                    }, this)}
+                    {/* {(this.state.data || []).map((row, idx) => {
                         return (
                             <tr key={idx}>{row.map((cell, idx) => {
                                 return <td key={idx}>{cell}</td>;
                             })}</tr>
                         )
-                    })}
+                    })} */}
                 </tbody>
             </table>
         )
@@ -140,13 +173,10 @@ class excel extends React.Component {
     }
 
     render() {
-        var state = this.state;
-
 
         return (
             <div>
-                <div>hello</div>
-                {console.log(this.state)}
+                <div>hello</div> 
 
                 {this._renderToolbar()}
                 {this._renderTable()}
