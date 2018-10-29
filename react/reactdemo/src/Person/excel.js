@@ -37,7 +37,7 @@ class excel extends React.Component {
         this.setState({
             edit: null,
             data: data,
-        })
+        }) 
     }
     _toggleSearch = () => {
         if (this.state.search) {
@@ -47,7 +47,7 @@ class excel extends React.Component {
             });
             this._preSearchData = null;
         } else {
-            this._preSearchData = this.state.data;
+            this._preSearchData = this.state.data
             this.setState({
                 search: true,
             });
