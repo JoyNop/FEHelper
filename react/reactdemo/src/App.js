@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
- 
-import Person from "./Person/Person";
-import Excel from "./Person/excel";
 
+import Person from "./Person/Person";
  
+
+
 class App extends Component {
 
   state = {
@@ -16,11 +16,11 @@ class App extends Component {
 
     ],
     otherState: "anything",
-    texts: "9999999",
-    data:[
-      
-         "aaa","asdf","dfas" 
-    
+    texts: "1",
+    data: [
+
+      "aaa", "asdf", "dfas"
+
     ]
   }
   switchNameHandler = (newName) => {
@@ -45,7 +45,7 @@ class App extends Component {
     console.log(this.state.texts)
     console.log("---------");
 
-    this._log('componentWillUpdate');
+    // this._log('componentWillUpdate');
 
     // componentDidUpdate = () => {
     //   this._log('componentDidUpdate');
@@ -69,7 +69,10 @@ class App extends Component {
 
 
   render() {
+    const greeting = [
  
+    ];
+
     return (
 
       <div className="App">
@@ -83,21 +86,16 @@ class App extends Component {
         <Person name={this.state.persons[1].name} count={this.state.persons[1].count} />
 
         <Person />
-        <textarea id="mytext" onChange={this.textChange}></textarea>
+        <textarea id="mytext" defaultValue={"Hello\nworld"} onChange={this.textChange}></textarea>
         <p>输入的数值为：{this.state.texts}，输入总长度：{this.state.texts.length}</p>
         <button onClick={() => console.log(234)}> console</button>
         <button onClick={() => alert(234)}> alert</button>
         <button onClick={this.appNode}> appNode</button>
-
-        <div id="ex">
-          {this.state.data.map((ele, index) => {
-            return (<tr>
-            </tr>)
-          })}
-        
-        </div> <Excel />
+        <div style={{fontSize:'2em'}}>hello world</div>
+        <input id="i" value='hello'></input>
+        {/* <Excel /> */}
       </div>
-     
+
     );
     // return React.createElement('div',{className:'App'},React.createElement('h1',null,'hello') );
   }
