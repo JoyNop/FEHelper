@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
+
+
 import ReactDOM from 'react-dom';
 import './App.css';
 
 import Person from "./Person/Person";
 import Excel from "./Person/Excel";
+import Suggest from "./Person/Suggest";
 
 
 
@@ -85,6 +88,12 @@ class App extends Component {
 
       <div className="App">
         <h1>hello</h1>
+        <Suggest options={['eenie', 'meenie','hei', 'miney', 'mo']} />
+
+
+
+
+
         {/* <button onClick={()=>this.switchNameHandler("bing")}>更改状态值</button> */}
         <button onClick={this.switchNameHandler.bind(this, "misss")}>更改状态值</button>
 
