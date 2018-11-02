@@ -5,10 +5,15 @@ function Person(){
     Person.prototype.job = "Software";
     Person.prototype.sayName = function(){
         alert(this.name);
-    };
+    }; 
+    
+   
+    
+ 
 
 }
-
+var button = document.getElementById('btn');
+button.addEventListener('click', hello, false);
 var person1 = new Person(); 
 var person2 = new Person();
 
@@ -23,3 +28,13 @@ Person.prototype.sayHi=function(){
 };
 
 friend.sayHi();
+
+
+function hellobtn(){
+    document.scrollingElement.scrollTop = 1;
+}
+function hello() {
+    console.log('Hello world');
+  }
+  
+ 
