@@ -19,5 +19,8 @@
 | [Vue组件嵌demo&ueditor](vue/ex/vue-playlist/)                                | 2018-9-29 | 100%  |
 |  VueCli3.0 ``vue ui``                               | 2018-10-04 | 100%  |
 | [基于Vue-element-node后台管理系统](https://github.com/rennysky/node-vue-ele-app)                                | 2018-10-15 | 100%  |
+| [React快速上手开发](https://book.douban.com/subject/26975465/) | 2018-10-30  | 100    |
 | [深入理解javascript原型和闭包](/js/prototype/)                                | 2018-10-19 | 5/17  |
-| [JavaScript高级程序设计（第3版）](https://book.douban.com/subject/10546125/) | 2018-10-21  | 79    |
+| [JavaScript高级程序设计（第3版）](https://book.douban.com/subject/10546125/) | 2019-01-07  | 100%    |
+| [深入REACT技术站](https://book.douban.com/subject/26918038/) | 2019-01-07  | 20%    |
+
